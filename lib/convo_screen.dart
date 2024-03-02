@@ -13,24 +13,24 @@ class _ConvoScreenState extends State<ConvoScreen> {
   final List<String> _messages = [];
 
   void _sendMessage(String message) {
-    if (message.isNotEmpty) {
-      setState(() {
-        _messages.add(message);
-      });
-      _messageInputController.clear();
+    if (message.isEmpty) {
+      return;
     }
+
+    setState(() {
+      _messages.add(message);
+    });
+
+    _messageInputController.clear();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Conversation Screen'),
-      ),
+      appBar: AppBar(title: const Text('Conversation Screen')),
       body: Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               child: _messages.isEmpty

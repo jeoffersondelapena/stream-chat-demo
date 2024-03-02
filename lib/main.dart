@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:stream_chat_demo/conversation_list_screen.dart';
-import 'package:stream_chat_demo/conversation_screen.dart';
 import 'package:stream_chat_demo/convo_screen.dart';
 import 'package:stream_chat_flutter/stream_chat_flutter.dart';
 
@@ -25,9 +23,7 @@ void main() async {
       builder: (context, child) {
         return StreamChat(client: client, child: child);
       },
-      // home: const ConvoScreen(),
-      // home: StreamChannel(channel: channel, child: const ConversationScreen()),
-      home: const ConversationListScreen(),
+      home: const ConvoScreen(),
     ),
   );
 }
